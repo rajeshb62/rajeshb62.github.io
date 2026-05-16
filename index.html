@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Knowledge Base</title>
+  <style>
+    :root {
+      --bg: #161618;
+      --surface: #1e1e20;
+      --border: #393639;
+      --text: #ebebec;
+      --text-dim: #d4d4d4;
+      --accent: #7b97aa;
+      --accent2: #84a59d;
+      --radius: 8px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin: 2rem 0 0.75rem;
+    }
+    .wiki-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+    .wiki-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .wiki-card:hover {
+      border-color: var(--accent);
+      background: #252529;
+    }
+    .wiki-card .name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .wiki-card .desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+    .wiki-card .pages {
+      font-size: 0.75rem;
+      color: var(--accent2);
+      margin-top: 0.4rem;
+    }
+    .wiki-card .arrow {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--border);
+      font-size: 1.2rem;
+      transition: color 0.2s, right 0.2s;
+    }
+    .wiki-card:hover .arrow {
+      color: var(--accent);
+      right: 0.85rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      opacity: 0.6;
+    }
+    .search-box {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 1.5rem;
+      display: block;
+      padding: 0.65rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus {
+      border-color: var(--accent);
+    }
+    .search-box::placeholder {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 History Knowledge Base</h1>
+      <p class="subtitle">Narrative research wikis covering world history from the 15th to 19th centuries — built from primary and secondary sources.</p>
+    </header>
+
+    <input type="text" class="search-box" id="search" placeholder="Filter wikis..." oninput="filterWikis()">
+
+    <div class="section-title">Early Modern</div>
+    <div class="wiki-grid" id="wiki-list">
+      <a href="https://rajeshb62.github.io/vijayanagara-wiki/" class="wiki-card" data-tags="vijayanagara india south-asia empire 15th">
+        <div class="name">Vijayanagara Empire</div>
+        <div class="desc">The Vijayanagara Empire at its height — administration, trade, society, and culture in 15th-century South India.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/ottoman-wiki/" class="wiki-card" data-tags="ottoman empire turkey middle-east mediterranean 15th">
+        <div class="name">Ottoman Empire</div>
+        <div class="desc">Mehmed the Conqueror, Byzantine legacy, Ottoman institutions, and the classical age of the empire through the 15th century.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/venice-wiki/" class="wiki-card" data-tags="venice italy republic mediterranean trade 15th 16th">
+        <div class="name">Venice</div>
+        <div class="desc">The Venetian Republic's maritime empire, commercial networks, finance, and cultural flowering in the 15th and 16th centuries.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/leanardo-davinci-renaissance-wiki/" class="wiki-card" data-tags="renaissance leonardo da-vinci art science italy 15th 16th">
+        <div class="name">Leonardo &amp; the Renaissance</div>
+        <div class="desc">The Italian Renaissance through the lens of Leonardo da Vinci, Burckhardt's Civilization, and the cultural revolution of 15th-16th century Italy.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/colombus-maritime-adventurers-wiki/" class="wiki-card" data-tags="columbus exploration age-of-discovery portugal spain maritime 16th 17th">
+        <div class="name">Columbus &amp; Maritime Adventurers</div>
+        <div class="desc">Columbus, Vasco da Gama, Magellan, Drake, and the European maritime expansion that reshaped the world in the 16th and 17th centuries.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/printing-press-wiki/" class="wiki-card" data-tags="printing press gutenberg book publishing communication 15th 16th">
+        <div class="name">Printing Press</div>
+        <div class="desc">Gutenberg, Aldus Manutius, the book trade, and how print transformed religion, science, and politics in 15th-16th century Europe.</div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+
+    <div class="section-title">Reformation &amp; Early Modern Europe</div>
+    <div class="wiki-grid">
+      <a href="https://rajeshb62.github.io/dutch-republic-wiki/" class="wiki-card" data-tags="dutch republic netherlands trade empire golden-age 16th 17th">
+        <div class="name">Dutch Republic</div>
+        <div class="desc">The rise of the Dutch Republic — the Revolt, the Golden Age, global trade, science, and the world of Rembrandt and Spinoza in the 16th and 17th centuries.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/england-16-wiki/" class="wiki-card" data-tags="england tudor elizabeth reformation shakespeare 16th">
+        <div class="name">England — 16th Century</div>
+        <div class="desc">Tudor England: the Reformation, dissolution of the monasteries, the Elizabethan court, the Armada, and the world of Shakespeare.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/england-17-wiki/" class="wiki-card" data-tags="england stuart civil-war revolution scientific 17th">
+        <div class="name">England — 17th Century</div>
+        <div class="desc">Civil war, the Commonwealth, the Restoration, the Glorious Revolution, the Bank of England, and the dawn of the Enlightenment.</div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+
+    <div class="section-title">Enlightenment &amp; Modern</div>
+    <div class="wiki-grid">
+      <a href="https://rajeshb62.github.io/great-britain-18-wiki/" class="wiki-card" data-tags="great-britain 18th enlightenment empire industrial naval">
+        <div class="name">Great Britain — 18th Century</div>
+        <div class="desc">The long 18th century: parliamentary union, naval supremacy, the South Sea Bubble, Clive in India, steam power, and Burke's reflections.</div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="https://rajeshb62.github.io/great-britain-19-wiki/" class="wiki-card" data-tags="great-britain 19th victorian industrial science credit">
+        <div class="name">Great Britain — 19th Century</div>
+        <div class="desc">Victorian Britain: Babbage's Decline of Science, credit systems, and the transformation of public finance in the early 19th century.</div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+
+    <footer>
+      11 wikies · Built with <a href="https://quartz.jzhao.xyz" style="color: var(--accent); text-decoration: none;">Quartz</a> powered by <a href="https://hermes-agent.nousresearch.com" style="color: var(--accent); text-decoration: none;">Hermes Agent</a>
+    </footer>
+  </div>
+
+  <script>
+    function filterWikis() {
+      const q = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.wiki-card').forEach(card => {
+        card.style.display = (!q || card.textContent.toLowerCase().includes(q) || (card.dataset.tags || '').includes(q)) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

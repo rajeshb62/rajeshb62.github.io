@@ -24,7 +24,11 @@
       line-height: 1.6;
       min-height: 100vh;
     }
-    .container { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
     header { text-align: center; margin-bottom: 3rem; }
     h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
     .subtitle { color: var(--text-dim); font-size: 1rem; max-width: 500px; margin: 0 auto; }
@@ -38,6 +42,7 @@
     .wiki-card:hover { border-color: var(--accent); background: #f5f5f5; }
     .wiki-card .name { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
     .wiki-card .desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.4; }
+    .badge { display: inline-block; margin-top: 0.5rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; color: #8a6d1a; background: #fdf4d8; border: 1px solid #e7d494; padding: 0.15rem 0.55rem; border-radius: 999px; }
     .wiki-card .arrow { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--border); font-size: 1.2rem; transition: color 0.2s, right 0.2s; }
     .wiki-card:hover .arrow { color: var(--accent); right: 0.85rem; }
     footer { text-align: center; margin-top: 4rem; font-size: 0.8rem; color: var(--text-dim); opacity: 0.6; }
@@ -54,7 +59,7 @@
 </head>
 <body>
   <div class="container">
-    <header><h1>📚 History Knowledge Base</h1><p class="subtitle">Narrative research wikis covering world history from the 15th to 19th centuries.</p></header>
+    <header><h1>📚 History Knowledge Base</h1><p class="subtitle">Narrative research wikis covering world history from the 15th century through the late 20th century.</p></header>
     <input type="text" class="search-box" id="search" placeholder="Filter wikis..." oninput="filterWikis()">
     <div class="section-title">Early Modern</div>
     <div class="wiki-grid" id="wiki-list">
@@ -71,12 +76,28 @@
       <a href="https://rajeshb62.github.io/england-16-wiki/" class="wiki-card"><div class="name">England — 16th Century</div><div class="desc">Tudor England: Reformation, Elizabeth, the Armada, Shakespeare.</div><div class="arrow">→</div></a>
       <a href="https://rajeshb62.github.io/england-17-wiki/" class="wiki-card"><div class="name">England — 17th Century</div><div class="desc">Civil war, Restoration, Glorious Revolution, the Enlightenment.</div><div class="arrow">→</div></a>
     </div>
-    <div class="section-title">Enlightenment &amp; Modern</div>
+    <div class="section-title">Enlightenment &amp; 19th Century</div>
     <div class="wiki-grid">
       <a href="https://rajeshb62.github.io/great-britain-18-wiki/" class="wiki-card"><div class="name">Great Britain — 18th Century</div><div class="desc">Union, empire, steam, and Burke.</div><div class="arrow">→</div></a>
-      <a href="https://rajeshb62.github.io/great-britain-19-wiki/" class="wiki-card"><div class="name">Great Britain — 19th Century</div><div class="desc">Babbage, credit systems, and public finance.</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/french-revolution-wiki/" class="wiki-card"><div class="name">French Revolution 1789 to 1815</div><div class="desc">From the fall of the Bastille to Waterloo — revolution, terror, and empire.</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/united-states-18-wiki/" class="wiki-card"><div class="name">United States — 18th Century</div><div class="desc">Revolution, constitution, and early republic.</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/great-britain-19-wiki/" class="wiki-card"><div class="name">United Kingdom — 1800–1865</div><div class="desc">Act of Union, Napoleonic war, Reform, industry, and mid-century transformation.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/united-states-1800-65-wiki/" class="wiki-card"><div class="name">United States — 1800–1865</div><div class="desc">Expansion, democracy, slavery crisis, and Civil War.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/united-kingdom-1865-1919-wiki/" class="wiki-card"><div class="name">United Kingdom — 1865–1919</div><div class="desc">Late Victorian, Edwardian, and First World War Britain.</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/united-states-1866-1919-wiki/" class="wiki-card"><div class="name">United States — 1866–1919</div><div class="desc">Reconstruction through industrial capitalism, Progressivism, and the Great War.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/rest-of-europe-1800-1865-wiki/" class="wiki-card"><div class="name">Rest of Europe — 1800–1865</div><div class="desc">Continental Europe from the close of the Napoleonic Wars — Restoration, the Revolutions of 1830 and 1848, and the national movements.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/rest-of-europe-1866-1919-wiki/" class="wiki-card"><div class="name">Rest of Europe — 1866–1919</div><div class="desc">Continental Europe from the Austro-Prussian War through the Great War — unification of Germany and Italy, the Kaiserreich, the Third Republic, the Dual Monarchy, and the road to 1914.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
     </div>
-    <footer>11 wikis · Built with <a href="https://quartz.jzhao.xyz">Quartz</a> · Powered by <a href="https://hermes-agent.nousresearch.com">Hermes Agent</a></footer>
+    <div class="section-title">20th Century</div>
+    <div class="wiki-grid">
+      <a href="https://rajeshb62.github.io/united-kingdom-1919-45-wiki/" class="wiki-card"><div class="name">United Kingdom — 1919–45</div><div class="desc">Interwar Britain, depression, and the Second World War.</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/united-kingdom-1946-present-wiki/" class="wiki-card"><div class="name">United Kingdom — 1946–present</div><div class="desc">Postwar settlement, welfare state, decolonization, and late-century Britain.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/rest-of-europe-1919-45-wiki/" class="wiki-card"><div class="name">Rest of Europe — 1919–45</div><div class="desc">Continental Europe from the Paris Peace Conference through the interwar republics, the rise of fascism, and the Second World War.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/united-states-1920-45-wiki/" class="wiki-card"><div class="name">United States — 1920–45</div><div class="desc">The 1920s boom, Prohibition and mass culture, the Great Depression, the New Deal, and wartime mobilization through 1945.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/united-states-1946-89-wiki/" class="wiki-card"><div class="name">United States — 1946–89</div><div class="desc">Postwar America through the Cold War close — retail scale, corporate restructuring, biotech, and semiconductors.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+      <a href="https://rajeshb62.github.io/international-organizations-20-wiki/" class="wiki-card"><div class="name">International Organizations — 20th Century–present</div><div class="desc">The League of Nations, the United Nations system, and the international financial institutions.</div><div class="badge">Under construction</div><div class="arrow">→</div></a>
+    </div>
+    <footer>24 wikis · Built with <a href="https://quartz.jzhao.xyz">Quartz</a> · Powered by <a href="https://hermes-agent.nousresearch.com">Hermes Agent</a></footer>
   </div>
   <script>
     function filterWikis() {
